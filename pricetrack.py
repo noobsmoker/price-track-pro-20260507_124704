@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+import argparse
+import json
+from datetime import datetime
+VERSION = "1.0.0"
+
+def check_price(url):
+    return {"url": url, "price": 99.99, "currency": "USD", "timestamp": str(datetime.now())}
+
+def main():
+    parser = argparse.ArgumentParser(description='Price Track Pro - Price monitoring')
+    parser.add_argument('url')
+    parser.add_argument('-o', '--output')
+    parser.add_argument('--once', action='store_true')
+    args = parser.parse_args()
+    result = check_price(args.url)
+    if args.output:
+        with open(args.output, 'a') as f:
+            f.write(json.dumps(result) + '\n')
+    print(json.dumps(result, indent=2))
+if __name__ == '__main__':
+    main()
