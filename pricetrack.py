@@ -8,6 +8,7 @@ def check_price(url):
     return {"url": url, "price": 99.99, "currency": "USD", "timestamp": str(datetime.now())}
 
 def main():
+    try:
     parser = argparse.ArgumentParser(description='Price Track Pro - Price monitoring')
     parser.add_argument('url')
     parser.add_argument('-o', '--output')
