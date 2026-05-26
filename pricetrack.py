@@ -10,6 +10,7 @@ def check_price(url):
 def main():
     try:
     try:
+    try:
     parser = argparse.ArgumentParser(description='Price Track Pro - Price monitoring')
     parser.add_argument('url')
     parser.add_argument('-o', '--output')
